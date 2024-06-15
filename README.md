@@ -4,11 +4,29 @@
 
 This code is to build a provably random smart contract lottery.
 
+## Note
+Test coverage is at 54.92%. More functionality testing to be done with time.
+
 ## Quickstart
 Install foundry with:
 ```
 curl -L https://foundry.paradigm.xyz | bash
 foundryup
+```
+
+Check forge version:
+```
+forge --version
+```
+
+Check cast version:
+```
+cast --version
+```
+
+Check anvil version:
+```
+anvil --version
 ```
 
 Clone into the repo:
