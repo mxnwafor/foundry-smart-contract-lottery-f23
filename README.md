@@ -4,6 +4,20 @@
 
 This code is to build a provably random smart contract lottery.
 
+## Quickstart
+Install foundry with:
+```
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+```
+
+Clone into the repo:
+```
+git clone https://github.com/mxnwafor/foundry-smart-contract-lottery-f23
+cd foundry-smart-contract-lottery-f23
+forge build
+```
+
 ## What we want it to do:
 
 1. Users can enter by paying for a ticket
