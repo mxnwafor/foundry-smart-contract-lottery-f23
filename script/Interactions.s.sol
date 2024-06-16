@@ -1,4 +1,11 @@
 // SPDX-License-Identifier: SEE LICENSE IN LICENSE
+
+/** List of contracts
+ * CreateSubscription{}
+ * FundSubscription{}
+ * AddConsumer{}
+ */
+
 pragma solidity ^0.8.18;
 
 import {Script, console} from "forge-std/Script.sol";
@@ -12,7 +19,7 @@ contract CreateSubscription is Script {
         HelperConfig helperConfig = new HelperConfig();
         (, , address vrfCoordinator, , , , , uint256 deployerKey) = helperConfig
             .activeNetworkConfig();
-        return createSubscription(vrfCoordinator, deployerKey); // this return statement is looking fishy
+        return createSubscription(vrfCoordinator, deployerKey);
     }
 
     function createSubscription(
@@ -21,9 +28,7 @@ contract CreateSubscription is Script {
     ) public returns (uint64 subId) {
         console.log("Creating subscription on ChainId: ", block.chainid);
         vm.startBroadcast(deployerKey);
-        console.log("TESTINGGG");
         subId = VRFCoordinatorV2Mock(vrfCoordinator).createSubscription(); // creates a subId
-        console.log("TEST22222");
         vm.stopBroadcast();
         console.log("Your sub Id is: ", subId);
         console.log("Please update the subscriptionId in HelperConfig.s.sol");
